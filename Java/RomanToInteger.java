@@ -19,13 +19,13 @@ public class RomanToInteger {
         }
         System.out.println(list);
 
-        int result = list.getFirst();
+        int result = list.getLast();
 
-        for (int i = 1; i < list.size(); i++) {
-            if(list.get(i) > list.get(i-1)){
-                result+=list.get(i)-2*list.get(i-1);
+        for (int i = list.size()-1; i >=1; i--) {
+            if(list.get(i)>=list.get(i-1)){
+                result+=list.get(i);
             }else{
-            result+=list.get(i);
+                result-=list.get(i);
             }
         }
         return  result;
